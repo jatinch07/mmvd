@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activities</title>
+    <link rel="stylesheet" href="css/activities.css" />
+  </head>
+  <script>
+    function saveActivities() {
+      const selected = [];
+    
+      document.querySelectorAll('input[name="activities"]:checked').forEach(el => {
+        selected.push(el.value);
+      });
+    
+      localStorage.setItem("valentineActivities", JSON.stringify(selected));
+    
+      window.location.href = "/lastpage.html";
+    }
+    </script> 
+  <script>
+    function saveActivities() {
+    
+      const selected = [];
+    
+      document.querySelectorAll('input[name="activities"]:checked').forEach(el => {
+        selected.push(el.value);
+      });
+    
+      if(selected.length === 0){
+        alert("Let's choose a few fun options.. 😘");
+        return;
+      }
+    
+      localStorage.setItem("valentineActivities", JSON.stringify(selected));
+    
+      window.location.href = "/lastpage.html";
+    }
+    </script>       
+  <body>
+    <div id="activityquestion"><b>What are we doing after? </b></div>
+    <div id = "bracket"><a> (select as many as you wanna) </a></div>
+    <div class="activities-selection">
+      <div class="activity-item">
+        <img src="/activities/movie.jpg" alt="movie" />
+        <label
+          ><input
+            type="checkbox"
+            name="activities"
+            value="movie"
+          />Movie</label
+        >
+      </div>
+      <div class="activity-item">
+        <img src="/activities/dance.jpeg" alt="dance" />
+        <label
+          ><input
+            type="checkbox"
+            name="activities"
+            value="dance"
+          />Dance</label
+        >
+      </div>
+      <div class="activity-item">
+        <img src="/activities/standup.jpeg" alt="standup" />
+        <label
+          ><input
+            type="checkbox"
+            name="activities"
+            value="standup"
+          />Standup Comedy</label
+        >
+      </div>
+      <div class="activity-item">
+        <img src="/activities/zumba.jpg" alt="zumba" />
+        <label
+          ><input
+            type="checkbox"
+            name="activities"
+            value="zumba"
+          />Zumba Workout</label
+        >
+      </div>
+      <div class="activity-item">
+        <img src="/activities/drawing.jpg" alt="drawing" />
+        <label
+          ><input
+            type="checkbox"
+            name="activities"
+            value="drawing"
+          />Drawing/Sketching</label
+        >
+      </div>
+      <div class="activity-item">
+        <img src="/activities/gossip.avif" alt="gossip" />
+        <label
+          ><input
+            type="checkbox"
+            name="activities"
+            value="gossip"
+          />Gossiping/Bitching (ye toh hogi hi)</label
+        >
+      </div>
+    </div>
+    <button class="button" onclick="saveActivities()">
+      Let's book it ...
+    </button>    
+  </body>
+</html>

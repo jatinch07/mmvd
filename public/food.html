@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Selection</title>
+    <link rel="stylesheet" href="css/food.css" />
+  </head>
+  <script>
+    function saveFood() {
+      const selected = [];
+      document.querySelectorAll('input[name="food"]:checked').forEach(el => {
+        selected.push(el.value);
+      });
+    
+      localStorage.setItem("valentineFood", JSON.stringify(selected));
+      window.location.href = "/dessert.html";
+    }
+    </script>    
+  <script>
+    function saveFood() {
+    
+      const selected = [];
+    
+      document.querySelectorAll('input[name="food"]:checked').forEach(el => {
+        selected.push(el.value);
+      });
+    
+      if(selected.length === 0){
+        alert("Pick at least one option cumtie😋");
+        return;
+      }
+    
+      localStorage.setItem("valentineFood", JSON.stringify(selected));
+    
+      window.location.href = "/dessert.html";
+    }
+    </script>    
+  <body>
+    <div id="foodquestion">
+      <b>What food would you like to eat?</b>
+    </div>
+
+    <div class="food-selection">
+      <div class="food-item">
+        <img src="/food/burger_king.jpeg" alt="burger king" />
+        <label
+          ><input
+            type="checkbox"
+            name="food"
+            value="burger king"
+          />
+          Burgers and Fries</label
+        >
+      </div>
+      <div class="food-item">
+        <img src="/food/taco_bell.jpeg" alt="taco" />
+        <label
+          ><input type="checkbox" name="food" value="taco" /> Taco Bell Burritos</label
+        >
+      </div>
+      <div class="food-item">
+        <img src="/food/dominos.jpeg" alt="dominos" />
+        <label
+          ><input type="checkbox" name="food" value="dominos" /> Pizza and Cheesy Bread</label
+        >
+      </div>
+      <div class="food-item">
+        <img src="/food/subway-vegan-menu.jpeg" alt="subway" />
+        <label><input type="checkbox" name="food" value="subway" /> Veggie Sandwich</label>
+      </div>
+      <div class="food-item">
+        <img src="/food/mcdonalds.jpeg" alt="mcdonalds" />
+        <label><input type="checkbox" name="food" value="mcdonalds" /> Mc Happy Meal</label>
+      </div>
+      <div class="food-item">
+        <img src="/food/papajohns.jpeg" alt="papajohns" />
+        <label><input type="checkbox" name="food" value="papajohns" /> PapaJohns Pizza</label>
+      </div>
+      <div class="food-item">
+        <img src="/food/pasta.jpeg" alt="pasta" />
+        <label><input type="checkbox" name="food" value="pasta" /> Pasta</label>
+      </div>
+      <div class="food-item">
+        <img src="/food/paneer.jpeg" alt="Paneer" />
+        <label><input type="checkbox" name="food" value="paneer" /> Paneer Tikka Masala and Naan</label>
+      </div>
+    </div>
+    <button class="button" onclick="saveFood()">
+      Continue (watery mouth)
+    </button>    
+  </body>
+</html>

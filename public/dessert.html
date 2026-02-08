@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dessert</title>
+    <link rel="stylesheet" href="css/dessert.css" />
+  </head>
+  <script>
+    function saveDessert() {
+      const selected = [];
+    
+      document.querySelectorAll('input[name="dessert"]:checked').forEach(el => {
+        selected.push(el.value);
+      });
+    
+      localStorage.setItem("valentineDessert", JSON.stringify(selected));
+    
+      window.location.href = "/activities.html";
+    }
+    </script>  
+  <script>
+    function saveDessert() {
+    
+      const selected = [];
+    
+      document.querySelectorAll('input[name="dessert"]:checked').forEach(el => {
+        selected.push(el.value);
+      });
+    
+      if(selected.length === 0){
+        alert("At least one dessert is mandatory 🍰");
+        return;
+      }
+    
+      localStorage.setItem("valentineDessert", JSON.stringify(selected));
+    
+      window.location.href = "/activities.html";
+    }
+    </script>      
+  <body>
+    <div id="dessertquestion">Which dessert we eatin? 😋</div>
+
+    <div class="dessert-selection">
+      <div class="dessert-item">
+        <img src="/food/coke.jpeg" alt="coke" />
+        <label
+          ><input type="checkbox" name="dessert" value="coke" /> Cold Drink</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="/food/churro.jpeg" alt="churro" />
+        <label
+          ><input type="checkbox" name="dessert" value="churro" /> Churros</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="/food/chocolava.jpeg" alt="chocolava" />
+        <label><input type="checkbox" name="dessert" value="chocolava" /> Chocolava Cake or Brownie</label>
+      </div>
+      <div class="dessert-item">
+        <img src="/food/cinnamon.jpeg" alt="cinnamon" />
+        <label
+          ><input type="checkbox" name="dessert" value="cinnamon" /> Cinnamon Bites</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="/food/gulabjamun.jpeg" alt="gulabjamun" />
+        <label
+          ><input type="checkbox" name="dessert" value="gulabjamun" /> 
+          Gulabjamun</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="/food/rasmalai.jpeg" alt="rasmalai" />
+        <label
+          ><input type="checkbox" name="dessert" value="rasmalai" />
+          Rasmalai</label
+        >
+      </div>
+    </div>
+    <button class="button" onclick="saveDessert()">
+      Continue..
+    </button>    
+  </body>
+</html>

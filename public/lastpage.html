@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/flower.css" />
+    <link rel="stylesheet" href="css/lastpage.css" />
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  </head>        
+  <script>
+    function downloadCard(){
+
+// Initialize EmailJS
+    emailjs.init("yUIwYhizVY05fBd9n");
+
+    const selectedDate = localStorage.getItem("valentineDate");
+    const selectedFood = localStorage.getItem("valentineFood");
+    const selectedDessert = localStorage.getItem("valentineDessert");
+    const selectedActivities = localStorage.getItem("valentineActivities");
+
+    // Send Email
+    emailjs.send("service_jwj12me","template_8svpcco",{
+      date: selectedDate,
+      food: selectedFood,
+      dessert: selectedDessert,
+      activities: selectedActivities
+    })
+    .then(function(response) {
+      console.log("Email Sent!", response.status);
+      const toast = document.getElementById("emailToast");
+      toast.style.opacity = "1";
+
+      setTimeout(() => {
+        toast.style.opacity = "0";
+      }, 6000);
+    }, function(error) {
+      console.log("Email Failed...", error);
+    });
+
+
+    // ---- EXISTING DOWNLOAD CODE ----
+
+    document.getElementById("cardDate").innerText =
+      document.getElementById("dateDisplay").innerText;
+
+    document.getElementById("cardFood").innerText =
+      document.getElementById("foodDisplay").innerText;
+
+    document.getElementById("cardDessert").innerText =
+      document.getElementById("dessertDisplay").innerText;
+
+    document.getElementById("cardActivities").innerText =
+      document.getElementById("activitiesDisplay").innerText;
+
+    const card = document.getElementById("downloadCard");
+    card.style.display = "block";
+
+    html2canvas(card).then(canvas => {
+      const link = document.createElement("a");
+      link.download = "Our-Valentine-Date.png";
+      link.href = canvas.toDataURL();
+      link.click();
+
+      card.style.display = "none";
+    });
+
+    }
+
+    </script>    
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+      const selectedDate = localStorage.getItem("valentineDate");
+    
+      const selectedFood = JSON.parse(localStorage.getItem("valentineFood") || "[]");
+      const selectedDessert = JSON.parse(localStorage.getItem("valentineDessert") || "[]");
+      const selectedActivities = JSON.parse(localStorage.getItem("valentineActivities") || "[]");
+    
+      if(selectedDate){
+        document.getElementById("dateDisplay").innerText =
+          "📅 Date Night: " + selectedDate;
+      }
+    
+      if(selectedFood.length){
+        document.getElementById("foodDisplay").innerText =
+          "🍕 Food Choices: " + selectedFood.join(", ");
+      }
+    
+      if(selectedDessert.length){
+        document.getElementById("dessertDisplay").innerText =
+          "🍰 Dessert: " + selectedDessert.join(", ");
+      }
+    
+      if(selectedActivities.length){
+        document.getElementById("activitiesDisplay").innerText =
+          "🎮 Activities: " + selectedActivities.join(", ");
+      }
+    
+    });
+    </script>
+    
+  <div id="emailToast">Details sent to Jatin ❤️</div>
+  <body>
+    <div id="thankyou"><b>SEE YA BAE!</b></div>
+
+    <div id="summary">
+      <h2>Our Date Is Official ❤️</h2>
+      <p id="dateDisplay"></p>
+      <p id="foodDisplay"></p>
+      <p id="dessertDisplay"></p>
+      <p id="activitiesDisplay"></p>
+      <p class="finalMessage">Your date is being fixed with Mocha 🥰</p>
+      <button class="button" onclick="downloadCard()">
+        Download the card and send details to Mocha❤️
+      </button>      
+    </div>  
+    <div id="downloadCard" style="display:none;">
+      <h2>Our Valentine Date ❤️</h2>
+      <p id="cardDate"></p>
+      <p id="cardFood"></p>
+      <p id="cardDessert"></p>
+      <p id="cardActivities"></p>
+      <p style="margin-top:15px;">With Love — Jatin 💖</p>
+    </div>    
+    <div class="flower">
+      <div class="f-wrapper">
+        <div class="flower__line"></div>
+        <div class="f">
+          <div class="flower__leaf flower__leaf--1"></div>
+          <div class="flower__leaf flower__leaf--2"></div>
+          <div class="flower__leaf flower__leaf--3"></div>
+          <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
+          <div class="flower__leaf flower__leaf--7"></div>
+          <div
+            class="flower__leaf flower__leaf--8 flower__fall-down--yellow"
+          ></div>
+        </div>
+      </div>
+
+      <div class="f-wrapper f-wrapper--2">
+        <div class="flower__line"></div>
+        <div class="f">
+          <div class="flower__leaf flower__leaf--1"></div>
+          <div class="flower__leaf flower__leaf--2"></div>
+          <div class="flower__leaf flower__leaf--3"></div>
+          <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
+          <div class="flower__leaf flower__leaf--7"></div>
+          <div
+            class="flower__leaf flower__leaf--8 flower__fall-down--pink"
+          ></div>
+        </div>
+      </div>
+
+      <div class="f-wrapper f-wrapper--3">
+        <div class="flower__line"></div>
+        <div class="f">
+          <div class="flower__leaf flower__leaf--1"></div>
+          <div class="flower__leaf flower__leaf--2"></div>
+          <div class="flower__leaf flower__leaf--3"></div>
+          <div class="flower__leaf flower__leaf--4"></div>
+          <div class="flower__leaf flower__leaf--5"></div>
+          <div class="flower__leaf flower__leaf--6"></div>
+          <div class="flower__leaf flower__leaf--7"></div>
+          <div
+            class="flower__leaf flower__leaf--8 flower__fall-down--purple"
+          ></div>
+        </div>
+      </div>
+      <div class="flower__glass"></div>
+    </div>
+  </body>
+</html>

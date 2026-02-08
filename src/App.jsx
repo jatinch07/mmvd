@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Spline from "@splinetool/react-spline";
 import Swal from "sweetalert2";
 import { BsVolumeUpFill, BsVolumeMuteFill } from "react-icons/bs";
-
+ 
 import MouseStealing from './MouseStealer.jsx';
 import lovesvg from "./assets/All You Need Is Love SVG Cut File.svg";
 import Lovegif from "./assets/GifData/main_temp.gif";
@@ -27,16 +27,16 @@ import yesgif9 from "./assets/GifData/Yes/lovecutie9.gif";
 import yesgif10 from "./assets/GifData/Yes/lovecutie6.gif";
 import yesgif11 from "./assets/GifData/Yes/lovecutie4.gif";
 //! no - Gifs Importing
-import nogif0 from "./assets/GifData/No/breakRej0.gif";
-import nogif0_1 from "./assets/GifData/No/breakRej0_1.gif";
-import nogif1 from "./assets/GifData/No/breakRej1.gif";
-import nogif2 from "./assets/GifData/No/breakRej2.gif";
-import nogif3 from "./assets/GifData/No/breakRej3.gif";
-import nogif4 from "./assets/GifData/No/breakRej4.gif";
-import nogif5 from "./assets/GifData/No/breakRej5.gif";
-import nogif6 from "./assets/GifData/No/breakRej6.gif";
+import nogif0 from "./assets/GifData/No/images3.gif";
+import nogif0_1 from "./assets/GifData/No/images4.gif";
+import nogif1 from "./assets/GifData/No/images5.gif";
+import nogif2 from "./assets/GifData/No/images6.gif";
+import nogif3 from "./assets/GifData/No/images7.gif";
+import nogif4 from "./assets/GifData/No/images3.gif";
+import nogif5 from "./assets/GifData/No/images4.gif";
+import nogif6 from "./assets/GifData/No/images2.gif";
 import nogif7 from "./assets/GifData/No/RejectNo.gif";
-import nogif8 from "./assets/GifData/No/breakRej7.gif";
+import nogif8 from "./assets/GifData/No/images5.gif";
 
 //! yes - Music Importing
 import yesmusic1 from "./assets/AudioTracks/Love_LoveMeLikeYouDo.mp3";
@@ -215,30 +215,31 @@ export default function Page() {
 
     const phrases = [
       "No",
-      "Are you sure?",
+      "Are you sure Milku?",
       "Really sure?",
       "Think again!",
       "Last chance!",
       "Surely not?",
-      "You might regret this!",
+      "Pakka?",
       "Give it another thought!",
-      "Are you absolutely certain?",
-      "This could be a mistake!",
+      "Yaar ese mat kar..",
+      "Pandso Please....",
       "U Have a heart!💕",
       "Don't be so cold!",
-      "Wouldn't you reconsider?",
+      "Mushie wouldn't you reconsider?",
       "Is that your final answer?",
       "You're breaking my heart ;(",
       "But... why? 😢",
       "Please, pretty please? 💖",
       "I can't take this! 😫",
-      "Are you sure you want to do this to me? 😢",
+      "Imagine my baby photos, you'll say no to this person? 😢",
       "You're gonna hurt my feelings! 😥",
       "I need you to reconsider, like now! 😓",
-      "I believe in you, don't disappoint me! 💔",
+      "You even changing the rigged cursor everytime to click no?💔",
       "My heart says yes, what about yours? ❤️",
       "Don't leave me hanging! 😬",
       "Plsss? :( You're breaking my heart 💔",
+      "Motu ha karde yaar 💔"
     ];
     
     return phrases[Math.min(noCount, phrases.length - 1)];
@@ -247,7 +248,7 @@ export default function Page() {
   useEffect(() => {
     if (yesPressed && noCount < 4 && !popupShown) {
       Swal.fire({
-        title: "I love you sooo Much!!!❤️, You’ve stolen my heart completely!!! 🥰💖 But itni pyaari ladki aur itni jaldi haan? Thoda aur nakhre karke mujhe tarpaao na! 🥰✨",
+        title: "Babe you said yes so early❤️, Awwwww!!! 🥰💖 But itni pyaari ladki aur itni jaldi haan? You deserve to make me work for it just a little bit more 🥰✨",
         showClass: {
           popup: `
             animate__animated
@@ -274,7 +275,7 @@ export default function Page() {
   useEffect(() => {
     if (yesPressed && noCount > 3 && !yespopupShown) {
       Swal.fire({
-        title: "I love you so much!! ❤️ You are my everything, my joy, my forever. Every moment with you is a memory I’ll cherish forever, and my heart beats only for you.</br> Will you be the love of my life forever?",
+        title: "Lob Lob!! ❤️ Mushie now get ready to spend a reallyyyy awesome date night with me.</br> I swear you won't regret this 🥰",
         width: 800,
         padding: "2em",
         color: "#716add",
@@ -294,7 +295,7 @@ export default function Page() {
   useEffect(() => {
     if (noCount == 25) {
       Swal.fire({
-        title: "My love for you is endless, like the stars in the sky—shining for you every night, even if you don’t always notice. 🌟 I’ll wait patiently, proving every day that you’re my everything. ❤️ Please press ‘Yes’ and let’s make this a forever story. 🥰✨<br/>'True love never gives up; it grows stronger with time.'",
+        title: "I know you're messing with me but I find it so cute when you tease me like this🌟 I’ll wait patiently, and if I have to really fight for you, I know I'll give my all, cause you're worth the whole damn world❤️ Please Agnes say yes and let's make this one super memorable🥰✨<br/>'To infinity and beyond ∞'",
         width: 850,
         padding: "2em",
         color: "#716add",
@@ -327,9 +328,16 @@ export default function Page() {
               src={YesGifs[currentGifIndex]}
               alt="Yes Response"
             />
-            <div className="text-4xl md:text-6xl font-bold my-2" style={{ fontFamily: "Charm, serif", fontWeight: "700", fontStyle: "normal" }}>I Love You !!!</div>
-            <div  className="text-4xl md:text-4xl font-bold my-1" style={{ fontFamily: "Beau Rivage, serif", fontWeight: "500", fontStyle: "normal" }}> You’re the love of my life. </div> 
+            <div className="text-4xl md:text-6xl font-bold my-2" style={{ fontFamily: "Charm, serif", fontWeight: "700", fontStyle: "normal" }}>Mocha Lob Milku!!!</div>
+            <div  className="text-4xl md:text-4xl font-bold my-1" style={{ fontFamily: "Beau Rivage, serif", fontWeight: "500", fontStyle: "normal" }}> XoXo...loads of 3 </div> 
             <WordMareque />
+            {/* ❤️ CONTINUE BUTTON */}
+            <button
+              onClick={() => window.location.href = "/date.html"}
+              className="mt-6 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg text-xl shadow-lg transition-transform hover:scale-105"
+            >
+              Plan Our Date ❤️
+            </button>
           </>
         ) : (
           <>
@@ -391,18 +399,15 @@ export default function Page() {
 
 const Footer = () => {
   return (
-    <a
+    <div
       className="fixed bottom-2 right-2 backdrop-blur-md opacity-80 hover:opacity-95 border p-1 rounded border-rose-300"
-      href="https://github.com/UjjwalSaini07"
-      target="_blank"
-      rel="noopener noreferrer"
     >
       Made with{" "}
       <span role="img" aria-label="heart">
         ❤️
       </span>
-      {" "}by Ujjwal
-    </a>
+      {" "}by Mocha
+    </div>
   );
 };
 

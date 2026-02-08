@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Date Selection</title>
+<link rel="stylesheet" href="/css/date.css" />
+</head>
+
+<body>
+
+<div id="datequestion">
+  <b>Pick our perfect date slot 💕</b>
+</div>
+
+<div class="date-selection">
+
+  <label class="date-item">
+    <input type="radio" name="dateSlot" value="14 Feb (Sat) — 12 Noon to 4 PM">
+    <div class="date-card">🌸 14 Feb (Sat) — 12 Noon to 4 PM EST</div>
+  </label>
+
+  <label class="date-item">
+    <input type="radio" name="dateSlot" value="15 Feb (Sun) — 12 Noon to 4 PM">
+    <div class="date-card">☀️ 15 Feb (Sun) — 12 Noon to 4 PM EST</div>
+  </label>
+
+  <label class="date-item">
+    <input type="radio" name="dateSlot" value="17 Feb (Tue) — 7 PM to 11 PM">
+    <div class="date-card">🌙 17 Feb (Tue) — 7 PM to 11 PM EST</div>
+  </label>
+
+  <label class="date-item">
+    <input type="radio" name="dateSlot" value="18 Feb (Wed) — 7 PM to 11 PM">
+    <div class="date-card">✨ 18 Feb (Wed) — 7 PM to 11 PM EST</div>
+  </label>
+
+</div>
+
+<button class="button" onclick="saveDate()">Continue ❤️</button>
+
+<script>
+function saveDate(){
+
+  const selected = document.querySelector('input[name="dateSlot"]:checked');
+
+  if(!selected){
+    alert("Pick one date slot cutie 😘");
+    return;
+  }
+
+  localStorage.setItem("valentineDate", selected.value);
+
+  window.location.href = "/food.html";
+}
+</script>
+
+</body>
+</html>
